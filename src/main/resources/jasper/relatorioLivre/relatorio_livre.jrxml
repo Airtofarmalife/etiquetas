@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="full_statement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" whenResourceMissingType="Empty" uuid="1dd83f14-bfeb-4562-bd55-f6a429421ffb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="DATA_ATUAL" class="java.lang.String"/>
+	<parameter name="PERIODO_INICIO" class="java.lang.String"/>
+	<parameter name="PERIODO_FIM" class="java.lang.String"/>
+	<parameter name="TOTAL" class="java.lang.String"/>
+	<parameter name="EMPRESAS" class="java.lang.String"/>
+	<parameter name="CANCELADO" class="java.lang.String"/>
+	<parameter name="TIPOS" class="java.lang.String"/>
+	<parameter name="STATEMENTS" class="java.util.List"/>
+	<parameter name="FILTRO_HORARIO" class="java.lang.String"/>
+	<parameter name="TOTAIS_POR_TAMANHO" class="java.lang.String"/>
+	<parameter name="BASE_PATH" class="java.lang.String"/>
+	<parameter name="STATEMENTS_SUBREPORT_PATH" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="106">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="190" height="20" forecolor="#5E333F" backcolor="#9C9797" uuid="a58e3c44-c008-442d-97c2-d61cbbdbecb3"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Histórico de Kits - Período livre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="330" height="20" forecolor="#5E333F" uuid="37764e17-78d1-429e-915a-4436c86bed7c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{PERIODO_INICIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="40" width="204" height="20" forecolor="#5E333F" backcolor="#9C9797" uuid="07db53ed-ae5c-45ea-819f-88aa44e6eb81"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{DATA_ATUAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="330" height="20" forecolor="#5E333F" uuid="d849685a-1c20-46b3-90df-848df22c741c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{EMPRESAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="550" height="20" forecolor="#5E333F" uuid="c870bc24-4b33-4fd5-8838-e26f209dbd34"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{TIPOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="150" height="20" forecolor="#5E333F" uuid="7b932a1d-b872-47ca-a251-39054d8354db"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CANCELADO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="66" splitType="Stretch">
+			<subreport>
+				<reportElement x="10" y="10" width="555" height="50" uuid="b5526664-96cb-4715-99ca-7dc833fe5201">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<subreportParameter name="BASE_PATH">
+					<subreportParameterExpression><![CDATA[$P{BASE_PATH}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{STATEMENTS})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{BASE_PATH} + $P{STATEMENTS_SUBREPORT_PATH}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="21">
+			<textField>
+				<reportElement x="498" y="0" width="40" height="20" forecolor="#5E333F" uuid="f8cd7493-deed-4e9a-a39c-655cc10d9f6f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="330" height="20" forecolor="#5E333F" uuid="cf1ea9d0-df76-4929-ba46-f7a229a84e67"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{TOTAIS_POR_TAMANHO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

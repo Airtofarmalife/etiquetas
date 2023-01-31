@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="full_statement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" whenResourceMissingType="Empty" uuid="1dd83f14-bfeb-4562-bd55-f6a429421ffb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="DATA_ATUAL" class="java.lang.String"/>
+	<parameter name="PERIODO_INICIO" class="java.lang.String"/>
+	<parameter name="PERIODO_FIM" class="java.lang.String"/>
+	<parameter name="EMPRESAS" class="java.lang.String"/>
+	<parameter name="TIPOS" class="java.lang.String"/>
+	<parameter name="TOTAL_MANHA" class="java.lang.String"/>
+	<parameter name="TOTAL_TARDE" class="java.lang.String"/>
+	<parameter name="TOTAL_NOITE" class="java.lang.String"/>
+	<parameter name="TOTAL_PORTE" class="java.lang.String"/>
+	<parameter name="STATEMENTS" class="java.util.List"/>
+	<parameter name="BASE_PATH" class="java.lang.String"/>
+	<parameter name="TOTAIS_POR_TAMANHO" class="java.lang.String"/>
+	<parameter name="STATEMENTS_SUBREPORT_PATH" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="106">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="170" height="20" forecolor="#5E333F" backcolor="#9C9797" uuid="a58e3c44-c008-442d-97c2-d61cbbdbecb3"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Histórico de Kits Por Turnos]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="40" width="204" height="20" forecolor="#5E333F" backcolor="#9C9797" uuid="07db53ed-ae5c-45ea-819f-88aa44e6eb81"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{DATA_ATUAL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="550" height="20" forecolor="#5E333F" uuid="f1e9aa4a-cbe8-444f-ad1d-946598080703"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{EMPRESAS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="550" height="20" forecolor="#5E333F" uuid="9bd18e30-94fc-416d-88ce-0d6437c3e6d8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{TIPOS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="330" height="20" forecolor="#5E333F" uuid="c3050f80-aba1-432e-8e4c-07a63045fc89"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{PERIODO_INICIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<subreport>
+				<reportElement x="10" y="10" width="555" height="50" uuid="b5526664-96cb-4715-99ca-7dc833fe5201">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<subreportParameter name="BASE_PATH">
+					<subreportParameterExpression><![CDATA[$P{BASE_PATH}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{STATEMENTS})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{BASE_PATH} + $P{STATEMENTS_SUBREPORT_PATH}]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="33">
+			<textField>
+				<reportElement x="345" y="0" width="40" height="20" forecolor="#5E333F" uuid="ad53fc41-a02e-449d-a426-6a8abaa14b6b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_TARDE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="0" width="40" height="20" forecolor="#5E333F" uuid="acaeed23-0863-42f3-baa4-f22a86669403">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_NOITE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="0" width="40" height="20" forecolor="#5E333F" uuid="8ac3b637-57f7-44df-9aba-f99e224a40a1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_MANHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="0" width="40" height="20" forecolor="#5E333F" uuid="f8cd7493-deed-4e9a-a39c-655cc10d9f6f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL_PORTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="282" height="20" forecolor="#5E333F" uuid="732b18fb-7224-42a7-9126-ed83996509ce"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{TOTAIS_POR_TAMANHO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

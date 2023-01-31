@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="etiqueta" pageWidth="215" pageHeight="115" columnWidth="215" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1dd83f14-bfeb-4562-bd55-f6a429421ffb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="BASE_PATH" class="java.lang.String"/>
+	<parameter name="EMPRESA" class="java.lang.String"/>
+	<parameter name="KIT" class="java.lang.String"/>
+	<parameter name="CICLO" class="java.lang.String"/>
+	<parameter name="AUTO_CLAVE" class="java.lang.String"/>
+	<parameter name="RESPONSAVEIS" class="java.lang.String"/>
+	<parameter name="HORA" class="java.lang.String"/>
+	<parameter name="QUANTIDADE" class="java.lang.String"/>
+	<parameter name="OBS" class="java.lang.String"/>
+	<parameter name="BAR_CODE_IMAGE" class="java.lang.String"/>
+	<detail>
+		<band height="115" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="7" width="176" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{EMPRESA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="17" width="176" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{KIT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="27" width="176" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CICLO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="37" width="176" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AUTO_CLAVE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="47" width="140" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESPONSAVEIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="57" width="190" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{QUANTIDADE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="67" width="135" height="11" forecolor="#5E333F" uuid="9fe499b5-5bef-4407-9590-f612da2d06a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{OBS}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RealSize" vAlign="Middle" isUsingCache="false">
+				<reportElement x="140" y="79" width="45" height="28" uuid="43ad8548-c4ab-4d15-8455-2ed02b6efa5a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[new java.io.ByteArrayInputStream(java.util.Base64.getDecoder().decode($P{BAR_CODE_IMAGE}.getBytes()))]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="164" y="47" width="30" height="11" forecolor="#5E333F" uuid="0fa0b9e0-751a-4ef1-8013-d1c5cb305e80">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{HORA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
