@@ -1,7 +1,9 @@
 # Passos utilizados para criacão:
 
 1. Buildar o jar file com o maven
+	 ```
 	 mvn clean package
+	 ```
 
 2. Utilizar a ferramenta Launch4j (ou similar) para criar o executável para windows:
 	https://launch4j.sourceforge.net/
