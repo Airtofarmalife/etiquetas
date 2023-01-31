@@ -13,6 +13,6 @@
 	Foi utilizado o Inno Setup Compiler: https://jrsoftware.org/isinfo.php
 
 	** Os seguintes diretorios são criados em C:etiquetas pelo programa durante a execucão:
-	 	Banco de dados 
-	 	Pasta de arquivos de imagens/pdf
-	 	Arquivos do Jasper Reports
+	 	- Banco de dados 
+	 	- Pasta de arquivos de imagens/pdf
+	 	- Arquivos do Jasper Reports
